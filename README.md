@@ -23,11 +23,7 @@ Principais páginas: `index.html`, `projetos.html`, `cadastro.html`
 - **Acessibilidade**: navegação por teclado, `skip-link`, foco visível, contraste testado (≥4.5:1), `aria` nos componentes.
 - **Desempenho**: imagens otimizáveis, CSS/JS minificados em `/dist`, lazy loading pronto para uso (adicione `loading="lazy"` onde quiser).
 
-## 🧭 Como publicar no GitHub Pages
-1. Faça push do repositório público.
-2. Em **Settings → Pages**, selecione **Deploy from Branch**.
-3. Branch: `main` • Folder: **/dist**.
-4. Salve. A URL será algo como `https://<seu-usuario>.github.io/<repo>/`.
+
 
 ## 🔀 Git/GitHub (Fluxo sugerido)
 - Branches: `main` (prod), `develop` (integração), `feature/*`, `release/*`, `hotfix/*`.
