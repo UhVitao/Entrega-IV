@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Equipa ONG de Animais — SVG</title>
+<style>
+  :root{
+    --shirt:#2fb3a3;   /* verde-água das camisolas */
+    --shirt-d:#26a191;
+    --bg1:#fff4dc;     /* fundo quente */
+    --bg2:#fde6b5;
+    --line:#2d2d2d;    /* linha de contorno suave */
+    --accent:#ffcc66;  /* detalhes quentes */
+  }
+  html,body{height:100%;margin:0;background:#0b0b0c;color:#222;font-family:system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"}
+  .frame{display:grid;place-items:center;padding:24px}
+  .card{background:#111;border:1px solid #222;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.45);padding:16px;max-width:1200px;width:100%}
+  .controls{display:flex;gap:12px;justify-content:flex-end;margin-bottom:8px}
+  .btn{appearance:none;border:1px solid #2a2a2a;background:#1a1a1a;color:#e7e7e7;border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:600}
+  .btn:hover{filter:brightness(1.15)}
+  svg{width:100%;height:auto;background:linear-gradient(180deg,var(--bg1),var(--bg2));border-radius:12px;}
+  /* Estilos do desenho */
+  .stroke{stroke:var(--line);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .shadow{filter:url(#shadow)}
+  .title{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;font-weight:800;letter-spacing:.06em}
+  .label{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;font-weight:700}
+  .paw{fill:#fff}
+  .eye{fill:#2b2b2b}
+  .cheek{fill:#ffb4a2;opacity:.35}
+  .white{fill:#fff}
+  .hair-brown{fill:#6e4b2a}
+  .hair-blonde{fill:#e0b87a}
+  .hair-black{fill:#1f1f1f}
+  .skin-a{fill:#f7caa7}
+  .skin-b{fill:#e9b18a}
+  .skin-c{fill:#c78e64}
+  .skin-d{fill:#9a6a49}
+  .shirt{fill:var(--shirt)}
+  .shirt-dark{fill:var(--shirt-d)}
+  .outline{stroke:rgba(0,0,0,.2);stroke-width:1}
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="card">
+    <div class="controls">
+      <button class="btn" id="downloadSvg">Baixar SVG</button>
+    </div>
+
+    <!-- ======= SVG ======= -->
+    <svg id="ong-svg" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Equipa de 15 voluntários de uma ONG de animais diante do abrigo, estilo cartoon">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#fff6de"/>
+          <stop offset="100%" stop-color="#fde3ae"/>
+        </linearGradient>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity=".2"/>
+        </filter>
+
+        <!-- Símbolo da pata para a camisola -->
+        <g id="paw" class="paw">
+          <circle cx="0" cy="0" r="7"/>
+          <circle cx="-9" cy="-8" r="3.3"/>
+          <circle cx="9" cy="-8" r="3.3"/>
+          <circle cx="-6" cy="5" r="3.3"/>
+          <circle cx="6" cy="5" r="3.3"/>
+        </g>
+
+        <!-- Ícone pequeno de estetoscópio -->
+        <g id="stetho" class="stroke" stroke-width="2" fill="none">
+          <path d="M-10 -6 q-6 6 0 12"/>
+          <path d="M10 -6 q6 6 0 12"/>
+          <circle cx="-12" cy="6" r="2.5" fill="#2b2b2b"/>
+          <circle cx="12" cy="6" r="2.5" fill="#2b2b2b"/>
+          <path d="M-2 8 q2 6 8 6"/>
+        </g>
+
+        <!-- PESSOA BASE (cabeça + tronco). Variantes de cabelo e pele via classes -->
+        <g id="person-base">
+          <!-- tronco -->
+          <g class="shadow">
+            <rect x="-45" y="10" rx="16" ry="16" width="90" height="90" class="shirt"/>
+            <rect x="-45" y="70" width="90" height="30" fill="rgba(0,0,0,.08)"/>
+          </g>
+          <!-- cabeça -->
+          <circle cx="0" cy="0" r="34" class="skin-a outline"/>
+          <!-- olhos -->
+          <g>
+            <circle cx="-10" cy="-2" r="5.5" class="eye"/>
+            <circle cx="10" cy="-2" r="5.5" class="eye"/>
+            <path d="M-10 12 q10 10 20 0" fill="none" class="stroke" stroke-width="3"/>
+            <circle cx="-18" cy="6" r="4" class="cheek"/>
+            <circle cx="18" cy="6" r="4" class="cheek"/>
+          </g>
+          <!-- gola -->
+          <path d="M-35 32 q35 18 70 0" fill="#c2efe9"/>
+          <!-- pata no peito -->
+          <use href="#paw" x="23" y="44"/>
+        </g>
+
+        <!-- VARIANTES DE CABELO -->
+        <g id="hair-short" class="hair-brown">
+          <path d="M-32 -10 q32 -28 64 0 v8 q-32 -16 -64 0z"/>
+        </g>
+        <g id="hair-long" class="hair-blonde">
+          <path d="M-34 -12 q34 -26 68 0 v12 q-20 20 -34 32 q-14 -12 -34 -32z"/>
+        </g>
+        <g id="hair-curly" class="hair-black">
+          <path d="M-36 -6 q12 -26 36 -26 q24 0 36 26 q-8 6 -16 10 q-10 -8 -20 0 q-10 -8 -20 0 q-8 -4 -16 -10z"/>
+        </g>
+        <g id="beard" class="hair-black" opacity=".9">
+          <path d="M-22 12 q22 26 44 0 q-4 18 -22 22 q-18 -4 -22 -22z"/>
+        </g>
+
+        <!-- ANIMAIS SIMPLES -->
+        <g id="dog" class="stroke" stroke-width="2">
+          <ellipse cx="0" cy="12" rx="26" ry="18" fill="#d9893b"/>
+          <circle cx="-10" cy="0" r="8" fill="#d9893b"/>
+          <circle cx="10" cy="0" r="8" fill="#d9893b"/>
+          <circle cx="0" cy="8" r="6" fill="#fff"/>
+          <circle cx="0" cy="8" r="3" fill="#2b2b2b"/>
+          <path d="M-16 -6 q-10 10 0 18" fill="#b87532"/>
+          <path d="M16 -6 q10 10 0 18" fill="#b87532"/>
+          <path d="M-8 22 q8 10 16 0"/>
+        </g>
+        <g id="cat" class="stroke" stroke-width="2">
+          <ellipse cx="0" cy="10" rx="18" ry="14" fill="#f39c12"/>
+          <circle cx="-7" cy="0" r="6" fill="#f39c12"/>
+          <circle cx="7" cy="0" r="6" fill="#f39c12"/>
+          <path d="M-10 -6 l6 -6 l6 6" fill="#f39c12"/>
+          <path d="M10 -6 l6 -6 l6 6" fill="#f39c12"/>
+          <circle cx="0" cy="8" r="3" fill="#2b2b2b"/>
+          <path d="M-8 16 q8 6 16 0"/>
+          <path d="M18 8 q10 4 12 0"/>
+        </g>
+        <g id="rabbit" class="stroke" stroke-width="2">
+          <ellipse cx="0" cy="12" rx="16" ry="12" fill="#eaeaea"/>
+          <rect x="-4" y="-10" rx="6" ry="6" width="8" height="18" fill="#eaeaea"/>
+          <rect x="-16" y="-10" rx="6" ry="6" width="8" height="18" fill="#eaeaea"/>
+          <circle cx="0" cy="8" r="3" fill="#2b2b2b"/>
+        </g>
+        <g id="parrot" class="stroke" stroke-width="2">
+          <ellipse cx="0" cy="0" rx="8" ry="10" fill="#22c55e"/>
+          <circle cx="-2" cy="-4" r="2.5" fill="#fff"/>
+          <circle cx="-2" cy="-4" r="1.4" fill="#2b2b2b"/>
+          <path d="M6 -2 q6 4 0 8" fill="#f59e0b"/>
+        </g>
+      </defs>
+
+      <!-- Céu suave -->
+      <rect x="0" y="0" width="1200" height="720" fill="url(#sky)"/>
+
+      <!-- Abrigo (fundo) -->
+      <g transform="translate(160,120)">
+        <rect x="0" y="0" width="880" height="380" rx="18" fill="#f8d79d" class="stroke shadow"/>
+        <rect x="36" y="70" width="260" height="170" rx="10" fill="#fff9ea" class="stroke"/>
+        <rect x="604" y="70" width="240" height="170" rx="10" fill="#fff9ea" class="stroke"/>
+        <rect x="420" y="70" width="120" height="260" rx="12" fill="#e6c58a" class="stroke"/>
+        <rect x="440" y="90" width="80" height="220" rx="8" fill="#d7b37a"/>
+        <rect x="360" y="-54" width="240" height="90" rx="14" fill="#2fb3a3" class="shadow"/>
+        <text x="480" y="-6" text-anchor="middle" font-size="44" class="title" fill="#fff">ADOTE</text>
+      </g>
+
+      <!-- CHÃO -->
+      <rect x="0" y="520" width="1200" height="200" fill="#f0dcb8"/>
+
+      <!-- ======= PESSOAS (3 fileiras de 5) ======= -->
+      <g id="row-1" transform="translate(120,500)">
+        <!-- 5 pessoas sentadas / ajoelhadas -->
+        <g transform="translate(0,0)">
+          <g transform="translate(0,0)">
+            <use href="#person-base"/>
+            <use href="#hair-long"/>
+            <use href="#cat" transform="translate(-34,80) scale(1.1)"/>
+          </g>
+          <g transform="translate(220,0)">
+            <use href="#person-base"/>
+            <use href="#hair-short"/>
+            <use href="#paw" x="24" y="44"/>
+            <use href="#dog" transform="translate(-30,84)"/>
+          </g>
+          <g transform="translate(440,0)">
+            <use href="#person-base"/>
+            <use href="#hair-curly"/>
+            <use href="#rabbit" transform="translate(-18,86)"/>
+          </g>
+          <g transform="translate(660,0)">
+            <use href="#person-base"/>
+            <use href="#hair-short" class="hair-black"/>
+            <g transform="translate(0,34)"><use href="#stetho"/></g>
+          </g>
+          <g transform="translate(880,0)">
+            <use href="#person-base"/>
+            <use href="#hair-long" class="hair-brown"/>
+            <g class="stroke" stroke-width="2">
+              <rect x="18" y="44" width="30" height="22" rx="4" fill="#e5e7eb"/>
+              <line x1="22" y1="52" x2="44" y2="52"/>
+              <line x1="22" y1="58" x2="46" y2="58"/>
+            </g>
+          </g>
+        </g>
+      </g>
+
+      <g id="row-2" transform="translate(120,380)">
+        <g transform="translate(0,0)">
+          <g transform="translate(0,0)">
+            <use href="#person-base"/>
+            <use href="#hair-curly"/>
+          </g>
+          <g transform="translate(220,0)">
+            <use href="#person-base"/>
+            <use href="#hair-short" class="hair-brown"/>
+            <use href="#beard"/>
+          </g>
+          <g transform="translate(440,0)">
+            <use href="#person-base"/>
+            <use href="#hair-long" class="hair-black"/>
+          </g>
+          <g transform="translate(660,0)">
+            <use href="#person-base"/>
+            <use href="#hair-short" class="hair-blonde"/>
+            <g transform="translate(0,34)"><use href="#stetho"/></g>
+          </g>
+          <g transform="translate(880,0)">
+            <use href="#person-base"/>
+            <use href="#hair-curly" class="hair-brown"/>
+            <use href="#parrot" transform="translate(36,-40)"/>
+          </g>
+        </g>
+      </g>
+
+      <g id="row-3" transform="translate(120,260)">
+        <g transform="translate(0,0)">
+          <g transform="translate(0,0)">
+            <use href="#person-base"/>
+            <use href="#hair-short" class="hair-black"/>
+          </g>
+          <g transform="translate(220,0)">
+            <use href="#person-base"/>
+            <use href="#hair-long" class="hair-blonde"/>
+          </g>
+          <g transform="translate(440,0)">
+            <use href="#person-base"/>
+            <use href="#hair-curly" class="hair-black"/>
+          </g>
+          <g transform="translate(660,0)">
+            <use href="#person-base"/>
+            <use href="#hair-short" class="hair-brown"/>
+            <use href="#beard"/>
+          </g>
+          <g transform="translate(880,0)">
+            <use href="#person-base"/>
+            <use href="#hair-long" class="hair-brown"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- Tigela de ração -->
+      <g transform="translate(780,610)" class="stroke" stroke-width="2">
+        <ellipse cx="0" cy="0" rx="40" ry="12" fill="#2fb3a3"/>
+        <ellipse cx="0" cy="-8" rx="40" ry="12" fill="#6ad5c8"/>
+        <circle cx="-18" cy="-10" r="4" fill="#b35c1e"/>
+        <circle cx="-6" cy="-11" r="4" fill="#b35c1e"/>
+        <circle cx="7" cy="-9" r="4" fill="#b35c1e"/>
+        <circle cx="19" cy="-12" r="4" fill="#b35c1e"/>
+      </g>
+
+      <!-- Legenda opcional -->
+      <text x="600" y="704" text-anchor="middle" font-size="16" class="label" fill="#5c4a2e">Equipa de voluntários da ONG de Proteção Animal</text>
+    </svg>
+
+    <script>
+      // Exporta o SVG exibido como ficheiro .svg
+      document.getElementById('downloadSvg').addEventListener('click', () => {
+        const svg = document.getElementById('ong-svg');
+        const clone = svg.cloneNode(true);
+        // garantir que o namespace esteja presente
+        clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        const blob = new Blob([clone.outerHTML], { type: 'image/svg+xml;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'equipa-ong-animais.svg';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(()=>URL.revokeObjectURL(url), 500);
+      });
+    </script>
+
+    <div style="color:#bbb;margin-top:10px;font-size:14px;line-height:1.4">
+      Dica: pode alterar as cores no topo do ficheiro (variáveis CSS) e editar os grupos <code>&lt;use&gt;</code> para criar novas variações de cabelo/pele. 
+      Os animais (cão, gato, coelho, papagaio) também podem ser reposicionados com <code>transform</code>.
+    </div>
+  </div>
+</div>
+</body>
+</html>

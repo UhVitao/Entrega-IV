@@ -1,0 +1,25 @@
+
+name: Bug report
+description: Reporte um problema
+labels: bug
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: O que aconteceu?
+      description: Descreva o bug e como reproduzi-lo.
+      placeholder: Passos para reproduzir...
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL (se houver)
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento esperado
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
