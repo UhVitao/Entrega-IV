@@ -34,8 +34,5 @@ Principais páginas: `index.html`, `projetos.html`, `cadastro.html`
 - Ajuste cores em `css/base.css` (tokens: `--color-primary`, `--color-secondary`, `--color-accent`, `--orange-*`).
 - Fundos suaves: `--bg-muted` (atual verde claro `#f1f8f4`).
 
-## 📄 Licença
-MIT (adicione um arquivo LICENSE se desejar).
-
 ---
 Atualizado em 2025-10-30.
